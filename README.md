@@ -1,2 +1,47 @@
 # indiaval
-Validators for Indian data formats: PAN, GSTIN, IFSC, pincode, mobile
+
+Simple Python validators for common Indian data formats: mobile numbers, PIN codes, PAN and IFSC codes.
+
+## Installation
+
+```bash
+git clone https://github.com/greeshmagowdaa4-lgtm/indiaval.git
+cd indiaval
+pip install -e .
+```
+
+## Usage
+
+```python
+from indiaval import (
+    is_valid_mobile,
+    is_valid_pincode,
+    is_valid_pan,
+    is_valid_ifsc,
+)
+
+is_valid_mobile("+91 9876543210")  # True
+is_valid_pincode("560001")         # True
+is_valid_pan("ABCDE1234F")         # True
+is_valid_ifsc("SBIN0001234")       # True
+
+is_valid_pincode("060001")         # False (can't start with 0)
+```
+
+## Validators
+
+| Function | Checks |
+|----------|--------|
+| `is_valid_mobile` | 10-digit number starting with 6-9, optional `+91`, `91` or `0` prefix |
+| `is_valid_pincode` | 6 digits, first digit not 0 |
+| `is_valid_pan` | 5 letters, 4 digits, 1 letter |
+| `is_valid_ifsc` | 4 letters, a zero, then 6 letters or digits |
+
+These check the **format** only. They don't confirm that a number or code actually exists.
+
+## Running tests
+
+```bash
+pip install pytest
+python -m pytest
+```
