@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/indiaval/__init__.py
+src/indiaval/validators.py
+src/indiaval.egg-info/PKG-INFO
+src/indiaval.egg-info/SOURCES.txt
+src/indiaval.egg-info/dependency_links.txt
+src/indiaval.egg-info/top_level.txt
+tests/test_validators.py
