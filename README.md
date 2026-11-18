@@ -1,6 +1,8 @@
 # indiaval
 
-Simple Python validators for common Indian data formats: mobile numbers, PIN codes, PAN and IFSC codes.
+![Tests](https://github.com/greeshmagowdaa4-lgtm/indiaval/actions/workflows/tests.yml/badge.svg)
+
+Simple Python validators for common Indian data formats: mobile numbers, PIN codes, PAN, IFSC codes and Aadhaar numbers.
 
 ## Installation
 
@@ -26,6 +28,7 @@ is_valid_pincode("560001")         # True
 is_valid_pan("ABCDE1234F")         # True
 is_valid_ifsc("SBIN0001234")       # True
 is_valid_aadhaar("234567890124")   # True
+````
 
 ## Validators
 
