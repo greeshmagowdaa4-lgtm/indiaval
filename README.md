@@ -2,9 +2,15 @@
 
 ![Tests](https://github.com/greeshmagowdaa4-lgtm/indiaval/actions/workflows/tests.yml/badge.svg)
 
-Simple Python validators for common Indian data formats: mobile numbers, PIN codes, PAN, IFSC codes and Aadhaar numbers.
+Simple Python validators for common Indian data formats: mobile numbers, PIN codes, PAN, IFSC codes, Aadhaar numbers, GSTIN and vehicle registration numbers.
 
 ## Installation
+
+```bash
+pip install indiaval
+```
+
+To work on the code locally:
 
 ```bash
 git clone https://github.com/greeshmagowdaa4-lgtm/indiaval.git
@@ -21,15 +27,19 @@ from indiaval import (
     is_valid_pan,
     is_valid_ifsc,
     is_valid_aadhaar,
+    is_valid_gstin,
+    is_valid_vehicle_number,
 )
 
-is_valid_mobile("+91 9876543210")  # True
-is_valid_pincode("560001")         # True
-is_valid_pan("ABCDE1234F")         # True
-is_valid_ifsc("SBIN0001234")       # True
-is_valid_aadhaar("234567890124")   # True
+is_valid_mobile("+91 9876543210")         # True
+is_valid_pincode("560001")                # True
+is_valid_pan("ABCDE1234F")                # True
+is_valid_ifsc("SBIN0001234")              # True
+is_valid_aadhaar("234567890124")          # True
+is_valid_gstin("27AAPFU0939F1ZV")         # True
+is_valid_vehicle_number("KA01AB1234")     # True
 
-is_valid_pincode("060001")         # False (can't start with 0)
+is_valid_pincode("060001")                # False (can't start with 0)
 ```
 
 ## Validators

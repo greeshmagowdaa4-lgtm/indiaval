@@ -1,13 +1,23 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "indiaval"
 version = "0.2.0"
-description = "Validators for Indian data formats"
+description = "Validators for Indian mobile, PIN code, PAN, IFSC, Aadhaar, GSTIN and vehicle numbers"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Greeshma Gowda K A" }]
+keywords = ["india", "validation", "aadhaar", "pan", "gstin", "ifsc"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/greeshmagowdaa4-lgtm/indiaval"
 
 [tool.setuptools.packages.find]
 where = ["src"]
