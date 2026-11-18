@@ -4,6 +4,7 @@ from indiaval import (
     is_valid_pan,
     is_valid_ifsc,
     is_valid_aadhaar,
+    is_valid_gstin
 )
 
 
@@ -36,3 +37,17 @@ def test_aadhaar():
     assert not is_valid_aadhaar("234567890125")  # wrong checksum
     assert not is_valid_aadhaar("123456789012")  # starts with 1
     assert not is_valid_aadhaar("23456789")      # too short
+
+def test_gstin():
+    assert is_valid_gstin("27AAPFU0939F1ZV")
+    assert is_valid_gstin("29ABCDE1234F1ZW")
+    assert not is_valid_gstin("27AAPFU0939F1ZX")  # wrong checksum
+    assert not is_valid_gstin("99AAPFU0939F1ZV")  # invalid state code
+
+
+def test_vehicle_number():
+    assert is_valid_vehicle_number("KA01AB1234")
+    assert is_valid_vehicle_number("KA 01 AB 1234")
+    assert is_valid_vehicle_number("MH-12-DE-1433")
+    assert not is_valid_vehicle_number("K01AB1234")
+    assert not is_valid_vehicle_number("KA01AB123")

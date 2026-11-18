@@ -50,3 +50,25 @@ def is_valid_aadhaar(value: str) -> bool:
     for i, ch in enumerate(reversed(number)):
         c = _D[c][_P[i % 8][int(ch)]]
     return c == 0
+
+    _GSTIN = re.compile(r"(0[1-9]|[1-2]\d|3[0-8])[A-Z]{5}\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]")
+_GSTIN_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+_VEHICLE = re.compile(r"[A-Z]{2}\d{2}[A-Z]{1,3}\d{4}")
+
+
+def is_valid_gstin(value: str) -> bool:
+    """15-character GSTIN with a valid checksum character."""
+    gstin = value.strip().upper()
+    if not _GSTIN.fullmatch(gstin):
+        return False
+    total = 0
+    for i, ch in enumerate(gstin[:14]):
+        v = _GSTIN_CHARS.index(ch) * (1 if i % 2 == 0 else 2)
+        total += v // 36 + v % 36
+    return _GSTIN_CHARS[(36 - total % 36) % 36] == gstin[14]
+
+
+def is_valid_vehicle_number(value: str) -> bool:
+    """Vehicle registration like KA01AB1234 (spaces and hyphens allowed)."""
+    number = value.upper().replace(" ", "").replace("-", "")
+    return bool(_VEHICLE.fullmatch(number))

@@ -41,6 +41,8 @@ is_valid_pincode("060001")         # False (can't start with 0)
 | `is_valid_pan` | 5 letters, 4 digits, 1 letter |
 | `is_valid_ifsc` | 4 letters, a zero, then 6 letters or digits |
 | `is_valid_aadhaar` | 12 digits, first digit 2-9, valid Verhoeff checksum |
+| `is_valid_gstin` | 15-character GSTIN with a valid state code and checksum |
+| `is_valid_vehicle_number` | State code, 2 digits, 1-3 letters, 4 digits (e.g. `KA01AB1234`) |
 
 These check the **format** only. They don't confirm that a number or code actually exists.
 
