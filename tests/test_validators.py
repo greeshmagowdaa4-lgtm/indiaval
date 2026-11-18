@@ -4,7 +4,8 @@ from indiaval import (
     is_valid_pan,
     is_valid_ifsc,
     is_valid_aadhaar,
-    is_valid_gstin
+    is_valid_gstin,
+    is_valid_vehicle_number,
 )
 
 
@@ -37,6 +38,7 @@ def test_aadhaar():
     assert not is_valid_aadhaar("234567890125")  # wrong checksum
     assert not is_valid_aadhaar("123456789012")  # starts with 1
     assert not is_valid_aadhaar("23456789")      # too short
+
 
 def test_gstin():
     assert is_valid_gstin("27AAPFU0939F1ZV")

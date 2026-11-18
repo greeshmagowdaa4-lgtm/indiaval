@@ -5,6 +5,9 @@ _PINCODE = re.compile(r"[1-9]\d{5}")
 _PAN = re.compile(r"[A-Z]{5}\d{4}[A-Z]")
 _IFSC = re.compile(r"[A-Z]{4}0[A-Z0-9]{6}")
 _AADHAAR = re.compile(r"[2-9]\d{11}")
+_GSTIN = re.compile(r"(0[1-9]|[1-2]\d|3[0-8])[A-Z]{5}\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]")
+_GSTIN_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+_VEHICLE = re.compile(r"[A-Z]{2}\d{2}[A-Z]{1,3}\d{4}")
 
 _D = (
     (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (1, 2, 3, 4, 0, 6, 7, 8, 9, 5),
@@ -50,10 +53,6 @@ def is_valid_aadhaar(value: str) -> bool:
     for i, ch in enumerate(reversed(number)):
         c = _D[c][_P[i % 8][int(ch)]]
     return c == 0
-
-    _GSTIN = re.compile(r"(0[1-9]|[1-2]\d|3[0-8])[A-Z]{5}\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]")
-_GSTIN_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-_VEHICLE = re.compile(r"[A-Z]{2}\d{2}[A-Z]{1,3}\d{4}")
 
 
 def is_valid_gstin(value: str) -> bool:
