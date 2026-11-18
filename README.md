@@ -18,15 +18,14 @@ from indiaval import (
     is_valid_pincode,
     is_valid_pan,
     is_valid_ifsc,
+    is_valid_aadhaar
 )
 
 is_valid_mobile("+91 9876543210")  # True
 is_valid_pincode("560001")         # True
 is_valid_pan("ABCDE1234F")         # True
 is_valid_ifsc("SBIN0001234")       # True
-
-is_valid_pincode("060001")         # False (can't start with 0)
-```
+is_valid_aadhaar("234567890124")   # True
 
 ## Validators
 
@@ -36,6 +35,7 @@ is_valid_pincode("060001")         # False (can't start with 0)
 | `is_valid_pincode` | 6 digits, first digit not 0 |
 | `is_valid_pan` | 5 letters, 4 digits, 1 letter |
 | `is_valid_ifsc` | 4 letters, a zero, then 6 letters or digits |
+| `is_valid_aadhaar` | 12 digits, first digit 2-9, valid Verhoeff checksum |
 
 These check the **format** only. They don't confirm that a number or code actually exists.
 
