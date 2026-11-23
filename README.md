@@ -1,6 +1,8 @@
 # indiaval
 
 ![Tests](https://github.com/greeshmagowdaa4-lgtm/indiaval/actions/workflows/tests.yml/badge.svg)
+[![PyPI](https://img.shields.io/pypi/v/indiaval)](https://pypi.org/project/indiaval/)
+![Python](https://img.shields.io/pypi/pyversions/indiaval)
 
 Simple Python validators for common Indian data formats: mobile numbers, PIN codes, PAN, IFSC codes, Aadhaar numbers, GSTIN and vehicle registration numbers.
 
@@ -62,3 +64,7 @@ These check the **format** only. They don't confirm that a number or code actual
 pip install pytest
 python -m pytest
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
