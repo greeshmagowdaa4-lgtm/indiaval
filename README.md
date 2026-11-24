@@ -43,6 +43,7 @@ is_valid_vehicle_number("KA01AB1234")     # True
 
 is_valid_pincode("060001")                # False (can't start with 0)
 ```
+
 ## Demo
 
 A runnable example is in [examples/demo.py](examples/demo.py):
